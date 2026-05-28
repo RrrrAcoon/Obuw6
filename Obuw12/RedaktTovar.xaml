@@ -1,0 +1,42 @@
+﻿<Window x:Class="Obuw12.RedaktTovar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:m="clr-namespace:Obuw12.Modeli"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Obuw12"
+        mc:Ignorable="d"
+         Background="#FFFFFF"
+         FontFamily="Arial"
+         WindowStartupLocation="CenterScreen"
+         d:DataContext="{d:DesignInstance Type=m:Tovar}"
+        Title="Товар" Height="600" Width="400">
+    <StackPanel Margin="15">
+        <TextBlock x:Name="LbId" Text="Id"/>
+        <TextBox x:Name="txtId" Text="{Binding Id}" IsReadOnly="True"/>
+        <TextBlock Text="Aртикул"/>
+        <TextBox Text="{Binding Artikul}"/>
+        <TextBlock Text="Наименование"/>
+        <TextBox Text="{Binding Naimenovanie}"/>
+        <TextBlock Text="Единица измерения"/>
+        <ComboBox x:Name="ComboEdinica" SelectedValue="{Binding EdinicaIzmereniyaId}" DisplayMemberPath="Nazvanie" SelectedValuePath="Id"/>
+        <TextBlock Text="Цена"/>
+        <TextBox Text="{Binding Cena}"/>
+        <TextBlock Text="Поставщик"/>
+        <ComboBox x:Name="ComboPostavchik" SelectedValue="{Binding PostavchikId}" DisplayMemberPath="Nazvanie" SelectedValuePath="Id"/>
+        <TextBlock Text="Производитель"/>
+        <ComboBox x:Name="ComboProizvoditel" SelectedValue="{Binding ProizvoditelId}" DisplayMemberPath="Nazvanie" SelectedValuePath="Id"/>
+        <TextBlock Text="Категория"/>
+        <ComboBox x:Name="ComboKategoriya" SelectedValue="{Binding KategoriyaId}" DisplayMemberPath="Nazvanie" SelectedValuePath="Id"/>
+        <TextBlock Text="Скидка"/>
+        <TextBox Text="{Binding Skidka}"/>
+        <TextBlock Text="Количество"/>
+        <TextBox Text="{Binding Kolichestvo}"/>
+        <TextBlock Text="Описание"/>
+        <TextBox  Text="{Binding Opisanie}" />
+        <Image Height="100" Stretch="Uniform" Source="{Binding PolniyPutkFoto}" Margin="0,0,0,20"/>
+        <Button Click="FotoClick" Content="Добавить фото"  Height="30" Margin="0,0,0,20"/>
+
+        <Button Click="Sohranit" Content="Сохранить" Background="LightGreen" Height="30"/>
+    </StackPanel>
+</Window>
